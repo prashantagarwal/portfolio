@@ -62,10 +62,15 @@ class Header extends Component {
   constructor (props) {
     super (props)
     this.state = {
-      active: location.pathname
+      active: null
     }
     this.setActive = this.setActive.bind(this)
   }
+
+  componentDidMount() {
+    this.setState({ active: location.pathname });
+  }
+  
 
   setActive (id) {
     this.setState({ active: id });
